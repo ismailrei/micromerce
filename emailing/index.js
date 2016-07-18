@@ -29,5 +29,39 @@ var plugin=function(options){
         {
             done({code:e.name},null);//return e.name at the error
         });
-    });
+    })
+    .add({area:"email",action:"send",cc:"*"},function(args,done)
+    {
+        console.log(args);
+        var message={
+            "html":args.content,
+            "subject":args.subject,
+            "to":[{
+                "email":args.to,
+                "name":args.name,
+                "type":"to"
+            },
+                "email":args.cc,
+                "name":args.ccName,
+                "type":"cc"
+            ],
+            "from_email":"ismailrei@gmail.com",
+            "from_name":"ismailrei"
+        }
+        mandrillClient.messages.send({"message":message},
+        function(result){
+            done(null,{status:result.status});
+        },function(e)
+        {
+            done({code:e.name},null);//return e.name at the error
+        });
+    })
 }
+module.exports=plugin;
+
+var seneca=require("seneca")();
+seneca.use(plugin)
+      .act({area:"email",action:"send",subject:"the subject",to:"ismailrei@gmail.com",name:"reida"},function(err,result){
+          console.log(err);
+          console.log(result);
+      })  
