@@ -1,0 +1,15 @@
+{
+  "name": "emailer",
+  "version": "1.0.0",
+  "description": "emailing api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ismail reida",
+  "license": "ISC",
+  "dependencies": {
+    "mandrill": "^0.1.0",
+    "mandrill-api": "^1.0.45"
+  }
+}

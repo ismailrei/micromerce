@@ -1,0 +1,19 @@
+{
+  "name": "micromerce",
+  "version": "1.0.0",
+  "description": "micro e-commerce application",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "grunt validate --verbose"
+  },
+  "author": "ismail reida",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "seneca": "^2.1.0",
+    "seneca-mongo-store": "^0.2.0",
+    "type-is": "^1.6.13"
+  }
+}
