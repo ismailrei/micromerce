@@ -25,7 +25,9 @@ var plugin=function(options){
         mandrillClient.messages.send({"message":message},
         function(result){
             done(null,{status:result.status});
-        },function(d)
-        )
-    })
+        },function(e)
+        {
+            done({code:e.name},null);//return e.name at the error
+        });
+    });
 }
