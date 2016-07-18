@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "mandrill": "^0.1.0",
-    "mandrill-api": "^1.0.45"
+    "mandrill-api": "^1.0.45",
+    "seneca": "^2.1.0"
   }
 }
