@@ -27,9 +27,9 @@ var plugin=function(options)
         produit.name=args.name;
         produit.description=args.category;
         produit.price=args.price;
-        produit.save$(function(err,produit)
+        produit.save$(function(err,prod)
         {
-            done(err,produits.data$(false));
+            done(err,produit.data$(false));
         });
 
     })
