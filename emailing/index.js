@@ -64,4 +64,5 @@ seneca.use(plugin)
       .act({area:"email",action:"send",subject:"the subject",to:"ismailrei@gmail.com",name:"reida"},function(err,result){
           console.log(err);
           console.log(result);
-      })  
+      })
+      .listen({ port: 8080, host: '192.168.225.161' });
